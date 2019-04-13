@@ -7,13 +7,11 @@ trigger:
   - master
 
 pool:
-  vmImage: 'Ubuntu-16.04'
+  name: Hosted VS2017
 
 steps:
-  - script: echo Hello, world!
-    displayName: 'Run a one-line script'
+  - task: BasEvers.DartToolKit-FieldTrail.DartToolKit-FieldTrail.DartToolKit-FieldTrail@0
+    displayName: 'DartToolKit (FieldTrail) 2.1.0'
+    inputs:
+      buildSpec: 'dart --version; pub cache repair; pub get'
 
-  - script: |
-      echo Add other tasks to build, test, and deploy your project.
-      echo See https://aka.ms/yaml
-    displayName: 'Run a multi-line script'
